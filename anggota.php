@@ -23,7 +23,7 @@
 		<tr>
 			<th>No</th>
 			<th>ID Anggota</th>
-			<th>Nama</th>
+			<th>Nama Lengkap</th>
 			<th>Kelamin</th>
 			<th>Telepon</th>
 			<th>Alamat</th>
