@@ -23,7 +23,7 @@
 		<tr>
         	<th>No</th>
         	<th>Id Buku</th>
-			<th>Judul</th>
+			<th>Judul Buku</th>
 			<th>Jenis</th>
 			<th>ISBN</th>
 			<th>Penulis</th>
