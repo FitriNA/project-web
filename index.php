@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>perpuz</title>
+<title>perpuz kampus</title>
   <link href="admin/lib/css/gaya.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="admin/lib/css/bootstrap.css">
 	<link rel="stylesheet" href="admin/lib/css/bootstrap-theme.min.css">
