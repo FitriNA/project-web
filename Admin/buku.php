@@ -41,7 +41,6 @@
 			<a href="buku-laporan.php"  target="_blank" style="text-decoration: none;"><input type="button" name="tambah" value="Cetak" class="btn btn-success"></a><p></p>
 		</div>
 	</div>
-	<a href="buku-tambah.php" style="text-decoration: none;"><input type="button" name="tambah" value="Tambah" class="btn btn-success"></a><p></p>
   	<table class="table table-bordered">
 		<tr>
         	<th>No</th>
