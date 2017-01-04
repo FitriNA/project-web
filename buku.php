@@ -19,6 +19,12 @@
   </div>
 </nav>
 <div class="container">
+	<form method="post" action="" class="form-inline">
+		<div class="form-group">
+			<input type="text" name="search" placeholder="Pencarian" class="form-control"/>
+			<input type="submit" name="cari" value="cari" class="btn btn-success"><p></p>
+		</div>
+	</form>
 	<table class="table table-bordered">
 		<tr>
         	<th>No</th>
