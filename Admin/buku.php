@@ -25,6 +25,22 @@
   </div>
 </nav>
 <div class="container">
+	<div class="row">
+		<div class="col-md-1">
+			<a href="buku-tambah.php" style="text-decoration: none;"><input type="button" name="tambah" value="Tambah" class="btn btn-success"></a>
+		</div>
+		<form method="post" action="" class="">
+			<div class="col-md-2">
+				<input type="text" name="search" placeholder="Pencarian" class="form-control"/>
+			</div>
+			<div class="col-md-1">
+				<input type="submit" name="cari" value="cari" class="btn btn-success">
+			</div>
+		</form>
+		<div class="col-md-1 col-md-offset-7">
+			<a href="buku-laporan.php"  target="_blank" style="text-decoration: none;"><input type="button" name="tambah" value="Cetak" class="btn btn-success"></a><p></p>
+		</div>
+	</div>
 	<a href="buku-tambah.php" style="text-decoration: none;"><input type="button" name="tambah" value="Tambah" class="btn btn-success"></a><p></p>
   	<table class="table table-bordered">
 		<tr>
@@ -41,10 +57,42 @@
 			<th>Tgl Masuk</th>
         	<th>Edit</th>
         	<th>Hapus</th>
+        </tr>
 			<?php
 				include('fungsi/koneksi.php');
 				$query=mysql_query("SELECT * FROM buku ORDER BY id_buku DESC") or die(mysql_error());
-				if(mysql_num_rows($query) == 0){
+				if (isset($_POST['cari'])) {
+					$search = $_POST['search'];
+
+					$sql = "SELECT * FROM buku WHERE id_buku LIKE '%$search%' OR judul LIKE '%$search%' OR jenis LIKE '%$search%' OR isbn LIKE '%$search%' OR penulis LIKE '%$search%' OR penerbit LIKE '%$search%' OR thn_terbit LIKE '%$search%' OR jml_buku LIKE '%$search%' OR rak_buku LIKE '%$search%' OR tgl_entry LIKE '%$search%'";
+					$result = mysql_query($sql) or die('Ada kesalahan saat menampilkan data.' . mysql_error());
+					
+					if (mysql_num_rows($result) == 0) {
+						echo '<p></p><p>Pencarian tidak ditemukan</p>';
+					} else {
+						echo '<p></p>';
+						$no = 1;
+						while($row=mysql_fetch_array($result)){
+						extract($row);
+							echo '<tr class=hijau>';
+							echo '<td>'.$no.'</td>';
+							echo '<td>'.$id_buku.'</td>';
+							echo '<td>'.$judul.'</td>';
+							echo '<td>'.$jenis.'</td>';
+							echo '<td>'.$isbn.'</td>';
+							echo '<td>'.$penulis.'</td>';
+							echo '<td>'.$penerbit.'</td>';
+							echo '<td>'.$thn_terbit.'</td>';
+							echo '<td>'.$jml_buku.'</td>';
+							echo '<td>'.$rak_buku.'</td>';
+							echo '<td>'.$tgl_entry.'</td>';
+							echo '<td colspan="2">Nonaktif</td>';
+							echo '</tr>';
+						$no++;
+						}
+					}
+				}
+				else if(mysql_num_rows($query) == 0){
 					echo '<tr><td colspan="13">Tidak ada data!</td></tr>';
 				}else{
 					$no=1;
