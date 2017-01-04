@@ -25,7 +25,22 @@
   </div>
 </nav>
 <div class="container">
-	<a href="anggota-tambah.php" style="text-decoration: none;"><input type="button" name="tambah" value="Tambah" class="btn btn-success"></a><p></p>
+	<div class="row">
+		<div class="col-md-1">
+			<a href="anggota-tambah.php" style="text-decoration: none;"><input type="button" name="tambah" value="Tambah" class="btn btn-success"></a><p></p>
+		</div>
+		<form method="post" action="" class="">
+			<div class="col-md-2">
+				<input type="text" name="search" placeholder="Pencarian" class="form-control"/>
+			</div>
+			<div class="col-md-1">
+				<input type="submit" name="cari" value="cari" class="btn btn-success">
+			</div>
+		</form>
+		<div class="col-md-1 col-md-offset-7">
+			<a href="anggota-laporan.php"  target="_blank" style="text-decoration: none;"><input type="button" name="tambah" value="Cetak" class="btn btn-success"></a><p></p>
+		</div>
+	</div>
 	<table class="table table-bordered">
 		<tr>
 			<th>NO</th>
@@ -38,10 +53,39 @@
 			<th>Tgl Masuk</th>
         	<th>Edit</th>
         	<th>Hapus</th>
+        </tr>
 			<?php
 				include('fungsi/koneksi.php');
 				$query=mysql_query("SELECT * FROM anggota ORDER BY id_anggota DESC") or die(mysql_error());
-				if(mysql_num_rows($query) == 0){
+				if (isset($_POST['cari'])) {
+					$search = $_POST['search'];
+
+					$sql = "SELECT * FROM anggota WHERE id_anggota LIKE '%$search%' OR nama LIKE '%$search%' OR kelamin LIKE '%$search%' OR phone LIKE '%$search%' OR alamat LIKE '%$search%' OR email LIKE '%$search%' OR tgl_entry LIKE '%$search%'";
+					$result = mysql_query($sql) or die('Ada kesalahan saat menampilkan data.' . mysql_error());
+					
+					if (mysql_num_rows($result) == 0) {
+						echo '<p></p><p>Pencarian tidak ditemukan</p>';
+					} else {
+						echo '<p></p>';
+						$no = 1;
+						while($row=mysql_fetch_array($result)){
+						extract($row);
+							echo '<tr class=hijau>';
+							echo '<td>'.$no.'</td>';
+							echo '<td>'.$id_anggota.'</td>';
+							echo '<td>'.$nama.'</td>';
+							echo '<td>'.$kelamin.'</td>';
+							echo '<td>'.$phone.'</td>';
+							echo '<td>'.$alamat.'</td>';
+							echo '<td>'.$email.'</td>';
+							echo '<td>'.$tgl_entry.'</td>';
+							echo '<td colspan="2">Nonaktif</td>';
+							echo '</tr>';
+						$no++;
+						}
+					}
+				}
+				else if(mysql_num_rows($query) == 0){
 					echo '<tr><td colspan="10">Tidak ada data!</td></tr>';
 				}else{
 					$no=1;
