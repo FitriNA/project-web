@@ -33,7 +33,7 @@ $pdf->SetFont('Arial','B',10);
 $pdf->Cell(1, 0.8, 'NO', 1, 0, 'C');
 $pdf->Cell(3, 0.8, 'ID Anggota', 1, 0, 'C');
 $pdf->Cell(5, 0.8, 'Nama', 1, 0, 'C');
-$pdf->Cell(2, 0.8, 'Kelamin', 1, 0, 'C');
+$pdf->Cell(2, 0.8, 'Jenis Kelamin', 1, 0, 'C');
 $pdf->Cell(3, 0.8, 'Phone', 1, 0, 'C');
 $pdf->Cell(5, 0.8, 'Alamat', 1, 0, 'C');
 $pdf->Cell(4, 0.8, 'Email', 1, 0, 'C');
