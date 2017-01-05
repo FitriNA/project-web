@@ -30,7 +30,7 @@
 			<th>No</th>
 			<th>ID Anggota</th>
 			<th>Nama</th>
-			<th>Kelamin</th>
+			<th>Jenis Kelamin</th>
 			<th>Telepon</th>
 			<th>Alamat</th>
 			<th>E-Mail</th>

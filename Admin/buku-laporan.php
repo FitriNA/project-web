@@ -15,7 +15,7 @@ $pdf->SetX(4);
 $pdf->MultiCell(19.5,0.5,'Telpon : 0852XXXXXXXX',0,'L');    
 $pdf->SetFont('Arial','B',10);
 $pdf->SetX(4);
-$pdf->MultiCell(19.5,0.5,'JL. Mastrip, Jember',0,'L');
+$pdf->MultiCell(19.5,0.5,'JL. Mastrip, Tegalbesar, Sumbersari, Kabupaten Jember, Jawa Timur 68124',0,'L');
 $pdf->SetX(4);
 $pdf->MultiCell(19.5,0.5,'website : www.perpuz.hol.es email : perpuz@gmail.com',0,'L');
 $pdf->Line(1,3.1,28.5,3.1);

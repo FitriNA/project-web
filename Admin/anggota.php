@@ -46,7 +46,7 @@
 			<th>NO</th>
 			<th>Id Anggota</th>
 			<th>Nama</th>
-			<th>JK</th>
+			<th>Jenis Kelamin</th>
 			<th>Telepon</th>
 			<th>Alamat</th>
 			<th>E-Mail</th>

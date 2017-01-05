@@ -51,7 +51,7 @@
 			<th>Penulis</th>
 			<th>Penerbit</th>
 			<th>Terbit</th>
-			<th>Jml</th>
+			<th>Jumlah</th>
 			<th>Rak</th>
 			<th>Tgl Masuk</th>
         	<th>Edit</th>
