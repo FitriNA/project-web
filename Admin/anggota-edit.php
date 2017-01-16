@@ -48,7 +48,12 @@
     <tr>
       <td>Kelamin</td>
       <td><div align="center">:</div></td>
-      <td><input name="kelamin" type="text" class="form-control" style="border: 1px solid #24890d;" value="<?php echo $data['kelamin']; ?>" required/></td>
+      <td><select name="kelamin" class="form-control" style="border: 1px solid #24890d;" value="<?php echo $data['kelamin']; ?>" required/>
+        <option value="">Pilih Kelamin</option>
+        <option value="L">Laki-Laki</option>
+        <option value="P">Perempuan</option>
+      </select>
+      </td>
     </tr>
     <tr>
       <td>Telepon</td>
