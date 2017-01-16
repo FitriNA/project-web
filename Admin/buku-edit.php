@@ -48,16 +48,7 @@
     <tr>
       <td>Jenis</td>
       <td><div align="center">:</div></td>
-      <td><select name="jenis" class="form-control" style="border: 1px solid #24890d;" required/>
-      <option value="">Pilih Jenis</option>
-        <option value="elektro">elektro</option>
-        <option value="jaringan">jaringan</option>
-        <option value="mekanik">mekanik</option>
-        <option value="motor">motor</option>
-        <option value="sipil">sipil</option>
-        <option value="tekno">tekno</option>
-      </select>
-      </td>
+      <td><input name="jenis" type="text" class="form-control" id="jenis" style="border: 1px solid #24890d;" value="<?php echo $data['jenis']; ?>" required/></td>
     </tr>
     <tr>
       <td>ISBN</td>
@@ -67,26 +58,12 @@
     <tr>
       <td>Penulis</td>
       <td><div align="center">:</div></td>
-      <td><select name="penulis" class="form-control" style="border: 1px solid #24890d;" required/>
-      <option value="">Pilih Penulis</option>
-        <option value="elsa">elsa</option>
-        <option value="erik">erik</option>
-        <option value="jono">jono</option>
-        <option value="onno">onno</option>
-      </select>
-      </td>
+      <td><input name="penulis" type="text" class="form-control" id="penulis" style="border: 1px solid #24890d;" value="<?php echo $data['penulis']; ?>" required/></td>
     </tr>
     <tr>
       <td>Penerbit</td>
       <td><div align="center">:</div></td>
-      <td><select name="penerbit" class="form-control" id="kdpenerbit" style="border: 1px solid #24890d;" required/>
-      <option value="">Pilih Penerbit</option>
-        <option value="gramedia">gramedia</option>
-        <option value="informatika">informatika</option>
-        <option value="maxikom">maxikom</option>
-        <option value="modula">modula</option>
-      </select>
-      </td>
+      <td><input name="penerbit" type="text" class="form-control" id="penerbit" style="border: 1px solid #24890d;" value="<?php echo $data['penerbit']; ?>" required/></td>
     </tr>
     <tr>
       <td>Tahun Terbit</td>
